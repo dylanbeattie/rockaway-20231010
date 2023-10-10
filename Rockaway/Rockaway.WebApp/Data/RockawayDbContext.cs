@@ -17,5 +17,9 @@ public class RockawayDbContext : DbContext {
 		// and use the same names as the C# classes instead
 		var rockawayEntities = modelBuilder.Model.GetEntityTypes().Where(e => e.ClrType.Namespace == typeof(Artist).Namespace);
 		foreach (var entity in rockawayEntities) entity.SetTableName(entity.DisplayName());
+
+		modelBuilder.Entity<Artist>(entity => {
+			entity.HasIndex(artist => artist.Slug).IsUnique();
+		});
 	}
 }
