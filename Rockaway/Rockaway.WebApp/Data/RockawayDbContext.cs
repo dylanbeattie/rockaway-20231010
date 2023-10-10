@@ -10,6 +10,7 @@ public class RockawayDbContext : DbContext {
 	public RockawayDbContext(DbContextOptions<RockawayDbContext> options) : base(options) { }
 
 	public DbSet<Artist> Artists { get; set; } = default!;
+	public DbSet<Venue> Venues { get; set; } = default!;
 
 	protected override void OnModelCreating(ModelBuilder modelBuilder) {
 		base.OnModelCreating(modelBuilder);
@@ -23,6 +24,7 @@ public class RockawayDbContext : DbContext {
 		});
 
 		modelBuilder.Entity<Artist>().HasData(SampleData.Artists.AllArtists);
+		modelBuilder.Entity<Venue>().HasData(SampleData.Venues.AllVenues);
 
 	}
 }
