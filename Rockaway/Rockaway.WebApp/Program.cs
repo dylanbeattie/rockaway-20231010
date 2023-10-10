@@ -1,3 +1,4 @@
+using Rockaway.WebApp.Services;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
@@ -5,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog();
 
 builder.Services.AddRazorPages();
+builder.Services.AddSingleton<IStatusReporter>(new StatusReporter());
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment()) {
@@ -20,5 +22,5 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
-
+app.MapGet("/status", (IStatusReporter reporter) => reporter.GetStatus());
 app.Run();
