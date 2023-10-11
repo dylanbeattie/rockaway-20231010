@@ -58,3 +58,9 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_71369816C78847E78E5A0896E1B7E07D }}
           package: .
+      - name: Apply EF Core migrations
+        run: |
+          dotnet tool install --global dotnet-ef
+          dotnet tool restore
+          dotnet ef database update -p Rockaway --connection '${{ secrets.AZURE_SQL_CONNECTIONSTRING }}'
+
