@@ -14,13 +14,13 @@ public class RockawayDbContext : DbContext {
 
 	protected override void OnModelCreating(ModelBuilder modelBuilder) {
 		base.OnModelCreating(modelBuilder);
-		// Override EF Core's default table naming (which pluralizes entity names)
-		// and use the same names as the C# classes instead
-		var rockawayEntities = modelBuilder.Model.GetEntityTypes().Where(e => e.ClrType.Namespace == typeof(Artist).Namespace);
-		foreach (var entity in rockawayEntities) entity.SetTableName(entity.DisplayName());
 
 		modelBuilder.Entity<Artist>(entity => {
 			entity.HasIndex(artist => artist.Slug).IsUnique();
+		});
+
+		modelBuilder.Entity<Venue>(entity => {
+			entity.HasIndex(venue => venue.Slug).IsUnique();
 		});
 
 		modelBuilder.Entity<Artist>().HasData(SampleData.Artists.AllArtists);
