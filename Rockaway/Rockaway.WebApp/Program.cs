@@ -22,6 +22,7 @@ if (builder.Environment.UseSqlite()) {
 } else {
 	Log.Information("Using SQL Server database");
 	var connectionString = builder.Configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING");
+	Log.Information("Using connection string {connectionString}", connectionString);
 	builder.Services.AddDbContext<RockawayDbContext>(options => options.UseSqlServer(connectionString));
 }
 
@@ -38,6 +39,9 @@ using (var scope = app.Services.CreateScope()) {
 	using var db = scope.ServiceProvider.GetService<RockawayDbContext>()!;
 	if (app.Environment.UseSqlite()) {
 		db.Database.EnsureCreated();
+	} else if (Boolean.TryParse(app.Configuration["apply-migrations"], out var applyMigrations) && applyMigrations) {
+		Log.Information("Applying EF database migrations");
+		db.Database.Migrate();
 	}
 }
 
