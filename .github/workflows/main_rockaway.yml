@@ -62,6 +62,6 @@ jobs:
         run: |
           dotnet tool install --global dotnet-ef
           dotnet tool restore
-          dotnet ef database update -p Rockaway/Rockaway.WebApp --connection '${{ secrets.AZURE_SQL_CONNECTIONSTRING }}'
+          dotnet ef database update --connection '${{ secrets.AZURE_SQL_CONNECTIONSTRING }}'
 
 
