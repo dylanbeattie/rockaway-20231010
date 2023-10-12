@@ -10,7 +10,7 @@ Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
 var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog();
 
-builder.Services.AddRazorPages(options => options.Conventions.AuthorizeAreaFolder("admin","/"));
+builder.Services.AddRazorPages(options => options.Conventions.AuthorizeAreaFolder("admin", "/"));
 builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<IStatusReporter>(new StatusReporter());
 

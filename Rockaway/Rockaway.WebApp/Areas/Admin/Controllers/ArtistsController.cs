@@ -81,8 +81,7 @@ namespace Rockaway.WebApp.Areas.Admin.Controllers {
 				try {
 					_context.Update(artist);
 					await _context.SaveChangesAsync();
-				}
-				catch (DbUpdateConcurrencyException) {
+				} catch (DbUpdateConcurrencyException) {
 					if (!ArtistExists(artist.Id)) {
 						return NotFound();
 					} else {
