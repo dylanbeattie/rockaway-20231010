@@ -30,6 +30,29 @@
 	  <UpToDateCheckInput Remove="wwwroot\css\rockaway.scss" />
 	</ItemGroup>
 	<ItemGroup>
+	  <None Include="wwwroot\lib\font-awesome\scss\brands.scss" />
+	  <None Include="wwwroot\lib\font-awesome\scss\fontawesome.scss" />
+	  <None Include="wwwroot\lib\font-awesome\scss\regular.scss" />
+	  <None Include="wwwroot\lib\font-awesome\scss\solid.scss" />
+	  <None Include="wwwroot\lib\font-awesome\scss\v4-shims.scss" />
+	  <None Include="wwwroot\lib\font-awesome\scss\_animated.scss" />
+	  <None Include="wwwroot\lib\font-awesome\scss\_bordered-pulled.scss" />
+	  <None Include="wwwroot\lib\font-awesome\scss\_core.scss" />
+	  <None Include="wwwroot\lib\font-awesome\scss\_fixed-width.scss" />
+	  <None Include="wwwroot\lib\font-awesome\scss\_functions.scss" />
+	  <None Include="wwwroot\lib\font-awesome\scss\_icons.scss" />
+	  <None Include="wwwroot\lib\font-awesome\scss\_list.scss" />
+	  <None Include="wwwroot\lib\font-awesome\scss\_mixins.scss" />
+	  <None Include="wwwroot\lib\font-awesome\scss\_rotated-flipped.scss" />
+	  <None Include="wwwroot\lib\font-awesome\scss\_screen-reader.scss" />
+	  <None Include="wwwroot\lib\font-awesome\scss\_shims.scss" />
+	  <None Include="wwwroot\lib\font-awesome\scss\_sizing.scss" />
+	  <None Include="wwwroot\lib\font-awesome\scss\_stacked.scss" />
+	  <None Include="wwwroot\lib\font-awesome\scss\_variables.scss" />
+	  <None Include="wwwroot\webfonts\fa-brands-400.woff2" />
+	  <None Include="wwwroot\webfonts\fa-regular-400.woff2" />
+	  <None Include="wwwroot\webfonts\fa-solid-900.woff2" />
+	  <None Include="wwwroot\webfonts\fa-v4compatibility.woff2" />
 	  <None Include="wwwroot\sass\frontend.scss" />
 	</ItemGroup>
 	<ItemGroup>
