@@ -1,3 +1,6 @@
+@use "sass:color";
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+
 // 1. Import Bootstrap functions so we can use them in our customization
 @import "../lib/bootstrap/dist/scss/functions.scss";
 
@@ -6,6 +9,7 @@
 $body-bg: #000;
 $body-color: #fff;
 $primary: #369 !default;
+$font-family-sans-serif: 'PT Sans Narrow', Arial, helvetica, sans-serif;
 
 // 3. Import the rest of the Bootstrap core libraries
 @import "../lib/bootstrap/dist/scss/variables.scss";
@@ -24,3 +28,79 @@ $primary: #369 !default;
 
 /* Add custom CSS rules for our site here: */
 
+@mixin fancy-panel($panel-color: color.scale($primary, $lightness: -75%)) {
+	margin: $grid-gutter-width 0;
+	border-radius: 2 * $border-radius;
+	padding: 2 * $border-radius;
+	background-color: $panel-color;
+	border: 1px solid $body-color;
+}
+
+html {
+	background: linear-gradient(150deg, color.scale($primary, $lightness: -70%) 0%, color.scale($primary, $lightness: -50%) 50%, color.scale($primary, $lightness: -80%) 100%);
+	background-attachment: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+	background: none;
+
+	> main {
+		@include fancy-panel;
+	}
+
+	> footer {
+		@include fancy-panel;
+		font-size: 80%;
+		display: flex;
+		justify-content: space-between;
+		nav {
+			a {
+				display: inline-block;
+				border-left: 1px solid #fff;
+				padding: 0 0.5em;
+				text-decoration: none;
+				color: $body-color;
+			}
+			a:first-child {
+				border: none;
+			}
+			a:hover {
+				color: $body-color;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	> header {
+		@include fancy-panel;
+		display: flex;
+		justify-content: space-between;
+
+		h1 {
+			margin: 0;
+			font-size: 0;
+			height: 38px;
+			width: 200px;
+			background: url(/img/rockaway-logotype.svg) left center no-repeat;
+			background-size: cover;
+		}
+
+		nav {
+			a {
+				background: $primary;
+				display: inline-block;
+				padding: 4px 16px;
+				color: $body-color;
+				font-size: 120%;
+				border-radius: $border-radius;
+				text-decoration: none;
+
+				&:hover {
+					color: $body-color;
+					background: color.scale($primary, $lightness: -50%);
+				}
+			}
+		}
+	}
+}
