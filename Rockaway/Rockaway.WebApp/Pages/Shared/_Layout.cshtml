@@ -4,21 +4,19 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>@(ViewData["Title"] ?? "Rockaway")</title>
-	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-reboot.min.css" />
-	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-grid.min.css" />
 	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-	@await RenderSectionAsync("head", required: false)
+	@await RenderSectionAsync("Head", required: false)
 </head>
 <body class="container">
 	<header>
-		<a class="navbar-brand" asp-area="Admin" asp-page="/Index">Rockaway</a>
+		<a asp-area="Admin" asp-page="/Index">Rockaway</a>
 		<nav>
 			<ul>
 				<li>
-					<a asp-area="Admin" asp-action="Index" asp-controller="Artists">Artists</a>
+					<a asp-action="Index" asp-controller="Artists">Artists</a>
 				</li>
 				<li class="nav-item">
-					<a asp-area="Admin" asp-action="Index" asp-controller="Venues">Venues</a>
+					<a asp-action="Index" asp-controller="Venues">Venues</a>
 				</li>
 			</ul>
 		</nav>
@@ -30,7 +28,6 @@
 		&copy; 2023 - Rockaway.WebApp - <a asp-area="" asp-page="/Privacy">Privacy</a>
 	</footer>
 	<script src="~/lib/jquery/dist/jquery.min.js"></script>
-	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="~/js/site.js" asp-append-version="true"></script>
 	@await RenderSectionAsync("Scripts", required: false)
 </body>

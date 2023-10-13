@@ -142,141 +142,155 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 	<h3>Input Types</h3>
 	<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input</a>
 	<hr />
+	@{
+		var cssClass = "col-lg-3 col-sm-6";
+	}
 	<form action="#" method="post" class="container">
 		<div class="row">
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<label for="input-text">Name</label>
 			</div>
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<input type="text" id="input-text" placeholder="what's your name?" />
 			</div>
-			<div class="col-lg-2 col-sm-6">
-				<label for="color-input">Hair colour:</label>
+			<div class="@cssClass">
+				<label for="color-input">Hair Colour</label>
 			</div>
-			<div class="col-lg-2 col-sm-6">
-				<input type="color" id="hair-color-input" value="color" />
+			<div class="@cssClass">
+				<input type="color" id="hair-color-input" value="#ff3399" />
 			</div>
-			<div class="col-lg-2 col-sm-6">
-				<label for="date-input">Date of Birth:</label>
+			<div class="@cssClass">
+				<label for="date-input">Date of Birth</label>
 			</div>
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<input type="date" id="date-input" value="date" />
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<label for="datetime-local-input">Audition Time</label>
 			</div>
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<input type="datetime-local" id="datetime-local-input" value="datetime-local" />
 			</div>
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<label for="email-input">Email Address</label>
 			</div>
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<input type="email" id="email-input" value="email" />
 			</div>
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<label for="file-input">Photograph</label>
 			</div>
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<input type="file" id="file-input" value="file" />
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<label for="number-input">Strings</label>
 			</div>
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<input type="number" id="number-input" value="5" min="2" max="8" />
 			</div>
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<label for="tel-input">Telephone</label>
 			</div>
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<input type="tel" id="tel-input" value="tel" />
 			</div>
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<label for="month-input">First concert?</label>
 			</div>
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<input type="month" id="month-input" value="month" />
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<label for="range-input">Volume</label>
 			</div>
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<input type="range" id="range-input" value="range" min="2" max="20" />
 			</div>
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<label for="password-input">Password</label>
 			</div>
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<input type="password" id="password-input" value="password" />
 			</div>
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<label for="search-input">search</label>
 			</div>
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<input type="search" id="search-input" value="search" />
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-2 col-sm-6">
-				<label for="time-input">Show time:</label>
+			<div class="@cssClass">
+				<label for="time-input">Show time</label>
 			</div>
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<input type="time" id="time-input" value="time" />
 			</div>
-			<div class="col-lg-2 col-sm-6">
-				<label for="url-input">Website:</label>
+			<div class="@cssClass">
+				<label for="url-input">Website</label>
 			</div>
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<input type="url" id="url-input" value="url" />
 			</div>
-			<div class="col-lg-2 col-sm-6">
-				<label for="week-input">week</label>
+			<div class="@cssClass">
+				<label for="week-input">Holiday Week</label>
 			</div>
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<input type="week" id="week-input" value="week" />
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-2 col-sm-6">
-				Instruments:
+			<div class="@cssClass">
+				<label>Instruments</label>
 			</div>
-			<div class="col-lg-2 col-sm-6">
-				<input type="checkbox" id="checkbox-input-guitar" value="checkbox" />
-				<label for="checkbox-input">Guitar</label><br />
-				<input type="checkbox" id="checkbox-input-bass" value="checkbox" />
-				<label for="checkbox-input">Bass</label><br />
-				<input type="checkbox" id="checkbox-input-drums" value="checkbox" />
-				<label for="checkbox-input">Drums</label><br />
+			<div class="@cssClass">
+				<label for="checkbox-input-guitar">
+					<input type="checkbox" id="checkbox-input-guitar" value="checkbox" />
+					Guitar
+				</label><br />
+				<label for="checkbox-input-bass">
+					<input type="checkbox" id="checkbox-input-bass" value="checkbox" />
+					Bass
+				</label><br />
+				<label for="checkbox-input-drums">
+					<input type="checkbox" id="checkbox-input-drums" value="checkbox" />
+					Drums
+				</label><br />
 			</div>
-
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
+				<label for="select-single">Instrument</label>
+			</div>
+			<div class="@cssClass">
+				<select id="select-single">
+					<option>select...</option>
+					<option>Guitar</option>
+					<option>Bass</option>
+					<option>Drums</option>
+					<optgroup label="Horns">
+						<option>Trumpet</option>
+						<option>Trombone</option>
+						<option>Saxophone</option>
+					</optgroup>
+				</select>
+			</div>
+			<div class="@cssClass">
 				Radio Station
 			</div>
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<label for="radio-input-jazz-fm">
 					<input type="radio" id="radio-input-jazz-fm" name="radio" value="jazz-fm" />
 					Jazz FM
-				</label>
+				</label><br />
 				<label for="radio-input-knac">
 					<input type="radio" id="radio-input-knac" name="radio" value="knac-pure-rock" />
 					KNAC Pure Rock 105.5
-				</label>
+				</label><br />
 				<label for="radio-input-bbc-r2">
 					<input type="radio" id="radio-input-bbc-r2" name="radio" value="bbc-radio-2" />
 					BBC Radio 2
-				</label>
+				</label><br />
 			</div>
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<label for="select-multiple">Select (multiple options)</label>
 			</div>
-			<div class="col-lg-2 col-sm-6">
+			<div class="@cssClass">
 				<select id="select-multiple" multiple="multiple">
 					<option>select...</option>
 					<option>Option 1</option>
@@ -289,8 +303,27 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					</optgroup>
 				</select>
 			</div>
+			<div class="@cssClass">
+				<label for="textarea-comments">Comments</label>
+			</div>
+			<div class="@cssClass">
+				<textarea id="textarea-comments" name="comments"></textarea>
+			</div>
 		</div>
 	</form>
+	<fieldset>
+		<legend>Music Genres</legend>
+		This is a set of checkboxes in fieldset element with a legend.
+		<br />
+		@foreach (var genre in new[] {
+		"Djent", "Mathcore", "Power Metal", "Fusion", "Synthwave", "Pirate Metal"
+		}) {
+			<label for="fieldset-checkbox-@genre">
+				<input type="checkbox" name="fieldset-checkbox" id="fieldset-checkbox-@genre" value="@genre" /> @genre
+			</label>
+		}
+	</fieldset>
+	<hr />
 	<h4>Buttons</h4>
 	<div>
 		<button type="button" class="btn btn-primary">Primary</button>
@@ -312,31 +345,4 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		<input class="btn btn-primary" type="submit" value="Submit">
 		<input class="btn btn-primary" type="reset" value="Reset">
 	</div>
-
-	<fieldset>
-		<legend>fieldset with legend</legend>
-		<input type="checkbox" name="fieldset-checkbox" value="1" /> Option 1
-		<br />
-		<input type="checkbox" name="fieldset-checkbox" value="2" /> Option 2
-		<br />
-		<input type="checkbox" name="fieldset-checkbox" value="3" /> Option 3
-		<br />
-	</fieldset>
-	<div>
-		<label for="select-single">Select (single option)</label>
-		<select id="select-single">
-			<option>select...</option>
-			<option>Option 1</option>
-			<option>Option 2</option>
-			<option>Option 3</option>
-			<optgroup label="Special Options">
-				<option>Special Option A</option>
-				<option>Special Option B</option>
-				<option>Special Option C</option>
-			</optgroup>
-		</select>
-	</div>
-	<div>
-	</div>
 </section>
-

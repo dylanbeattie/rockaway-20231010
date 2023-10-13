@@ -1,0 +1,26 @@
+// 1. Import Bootstrap functions so we can use them in our customization
+@import "../lib/bootstrap/dist/scss/functions.scss";
+
+// 2. Customise Bootstrap by overriding variables here.
+// Look at _variables.scss to see what's available to override:
+$body-bg: #000;
+$body-color: #fff;
+$primary: #369 !default;
+
+// 3. Import the rest of the Bootstrap core libraries
+@import "../lib/bootstrap/dist/scss/variables.scss";
+@import "../lib/bootstrap/dist/scss/mixins.scss";
+@import "../lib/bootstrap/dist/scss/utilities.scss";
+
+// 4. Import Bootstrap modules.
+// Either cherry-pick the pieces of Boostrap that we want to use in our site:
+// @import "../lib/bootstrap/dist/scss/_reboot.scss";
+// @import "../lib/bootstrap/dist/scss/_buttons.scss";
+// @import '../lib/bootstrap/dist/scss/_containers.scss';
+// @import "../lib/bootstrap/dist/scss/_grid.scss";
+
+/* or just pull in the whole customised Boostrap library */
+@import "../lib/bootstrap/dist/scss/bootstrap.scss";
+
+/* Add custom CSS rules for our site here: */
+
