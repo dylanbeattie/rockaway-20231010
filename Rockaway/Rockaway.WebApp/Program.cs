@@ -31,6 +31,10 @@ builder.Services
 	.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
 	.AddEntityFrameworkStores<RockawayDbContext>();
 
+#if DEBUG
+builder.Services.AddSassCompiler();
+#endif
+
 var app = builder.Build();
 
 if (app.Environment.IsProduction()) {
