@@ -28,13 +28,26 @@ $font-family-sans-serif: 'PT Sans Narrow', Arial, helvetica, sans-serif;
 
 /* Add custom CSS rules for our site here: */
 
+@mixin smartphone {
+	@media (max-width: 480px) {
+		@content;
+	}
+}
+
 @mixin fancy-panel($panel-color: color.scale($primary, $lightness: -75%)) {
 	margin: $grid-gutter-width 0;
 	border-radius: 2 * $border-radius;
 	padding: 2 * $border-radius;
 	background-color: $panel-color;
 	border: 1px solid $body-color;
+
+	@include smartphone {
+		border: 0;
+		border-radius: 0;
+		margin: 0 0 $grid-gutter-width/2 0;
+	}
 }
+
 
 html {
 	background: linear-gradient(150deg, color.scale($primary, $lightness: -70%) 0%, color.scale($primary, $lightness: -50%) 50%, color.scale($primary, $lightness: -80%) 100%);
@@ -43,39 +56,43 @@ html {
 }
 
 body {
+	@include smartphone {
+		padding: 0 !important;
+	}
+
 	background: none;
 
 	> main {
 		@include fancy-panel;
 	}
 
-	> footer {
-		@include fancy-panel;
-		font-size: 80%;
-		display: flex;
-		justify-content: space-between;
-		nav {
-			a {
-				display: inline-block;
-				border-left: 1px solid #fff;
-				padding: 0 0.5em;
-				text-decoration: none;
-				color: $body-color;
-			}
-			a:first-child {
-				border: none;
-			}
-			a:hover {
-				color: $body-color;
-				text-decoration: underline;
-			}
-		}
-	}
-
 	> header {
 		@include fancy-panel;
 		display: flex;
 		justify-content: space-between;
+		position: relative;
+
+		label#nav-toggle {
+			display: none;
+
+			@include smartphone {
+				display: block;
+				position: absolute;
+				z-index: 2;
+				top: $border-radius;
+				right: $border-radius;
+			}
+		}
+
+		input#nav-checkbox {
+			height: 0;
+
+			@include smartphone {
+				&:checked ~ nav {
+					height: 300px;
+				}
+			}
+		}
 
 		h1 {
 			margin: 0;
@@ -87,6 +104,24 @@ body {
 		}
 
 		nav {
+			@include smartphone {
+				position: absolute;
+				overflow-y: hidden;
+				display: block;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 0;
+				transition: height 0.2s ease;
+
+				a {
+					border-radius: 0 !important;
+					display: block;
+					width: 100%;
+					border-top: 1px solid $body-color;
+				}
+			}
+
 			a {
 				background: $primary;
 				display: inline-block;
@@ -99,6 +134,53 @@ body {
 				&:hover {
 					color: $body-color;
 					background: color.scale($primary, $lightness: -50%);
+				}
+			}
+		}
+	}
+
+	> footer {
+		@include fancy-panel;
+		font-size: 80%;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+
+		span {
+			flex-grow: 1;
+
+			@include smartphone {
+				text-align: center;
+			}
+		}
+
+		nav {
+			text-align: right;
+			flex-grow: 1;
+
+			a {
+				display: inline-block;
+				border-left: 1px solid #fff;
+				padding: 0 0.5em;
+				text-decoration: none;
+				color: $body-color;
+			}
+
+			a:first-child {
+				border: none;
+			}
+
+			a:hover {
+				color: $body-color;
+				text-decoration: underline;
+			}
+
+			@include smartphone {
+				width: 100%;
+				text-align: center;
+				a {
+					display: block;
+					border: 0;
 				}
 			}
 		}
