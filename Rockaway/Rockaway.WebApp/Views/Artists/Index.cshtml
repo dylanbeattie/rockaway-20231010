@@ -1,0 +1,8 @@
+@model IEnumerable<Rockaway.WebApp.Data.Entities.Artist>
+<article class="artist-gallery">
+	@foreach (var artist in Model) {
+		<section>
+			<partial name="_ArtistCard" model="artist" />
+		</section>
+	}
+</article>

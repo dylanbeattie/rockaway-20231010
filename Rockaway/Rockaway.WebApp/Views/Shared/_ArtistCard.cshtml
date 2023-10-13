@@ -1,0 +1,7 @@
+@model Artist
+
+<div style="background-image: url(https://res.cloudinary.com/ursatile/image/upload/c_fill,g_auto:face,h_450,w_600/rockaway/@(Model.Slug).png)">
+	<h4>@Model.Name</h4>
+	<p>@Model.Description</p>
+	<a class="btn btn-primary" asp-controller="Artists" asp-action="Details" asp-route-slug="@Model.Slug">Find Tickets...</a>
+</div>

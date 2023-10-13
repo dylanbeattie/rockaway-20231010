@@ -1,0 +1,8 @@
+@model Artist
+<article class="artist-details">
+	<img src="https://res.cloudinary.com/ursatile/image/upload/c_fill,g_auto:face,h_450,w_600/rockaway/@(Model.Slug).png"
+		 alt="Photograph of @Model.Name" />
+	<h1>@Model.Name</h1>
+	<p>@Model.Description</p>
+	<hr />
+</article>

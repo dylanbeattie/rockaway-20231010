@@ -65,7 +65,6 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 app.MapGet("/status", (IStatusReporter reporter) => reporter.GetStatus());
-app.MapControllerRoute(name: "admin", pattern: "{area=Admin}/{controller=Home}/{action=Index}/{id?}")
-	.RequireAuthorization();
+app.MapAreaControllerRoute("admin", "Admin", "Admin/{controller=Home}/{action=Index}/{id?}").RequireAuthorization();
 app.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
 app.Run();
